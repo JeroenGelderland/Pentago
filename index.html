@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+
+        class Coordinate {
+            x
+            y
+
+            constructor(x, y) {
+                this.x = x
+                this.y = y
+            }
+
+            turnRight() {
+                switch (x) {
+
+                    case 1:
+                        switch (y) {
+                            case 1:
+                                y = 3
+                                break;
+                            case 2:
+                                x = 2
+                                y = 3
+                                break;
+                            case 3:
+                                x = 3;
+                                break;
+                        }
+                        break;
+
+                    case 2:
+                        switch (y) {
+                            case 1:
+                                x = 1
+                                y = 2
+                                break;
+                            case 3:
+                                x = 3;
+                                y = 2;
+                                break;
+                        }
+                        break;
+
+                    case 3:
+                        switch (y) {
+                            case 1:
+                                x = 1
+                                break;
+                            case 2:
+                                x = 2
+                                y = 1
+                                break;
+                            case 3:
+                                y = 1;
+                                break;
+                        }
+                        break;
+                }
+            }
+
+            turnLeft() {
+                switch (x) {
+
+                    case 1:
+                        switch (y) {
+                            case 1:
+                                x = 3
+                                break;
+                            case 2:
+                                x = 2
+                                y = 1
+                                break;
+                            case 3:
+                                y = 1;
+                                break;
+                        }
+                        break;
+
+                    case 2:
+                        switch (y) {
+                            case 1:
+                                x = 3
+                                y = 2
+                                break;
+                            case 3:
+                                x = 1;
+                                y = 2;
+                                break;
+                        }
+                        break;
+
+                    case 3:
+                        switch (y) {
+                            case 1:
+                                y = 3
+                                break;
+                            case 2:
+                                x = 2
+                                y = 3
+                                break;
+                            case 3:
+                                x = 1
+                                y = 3;
+                                break;
+                        }
+                        break;
+                }
+            }
+        }
+
+        class Marble extends Coordinate {
+
+            color
+
+            constructor(x, y) {
+                super(x, y)
+            }
+
+
+        }
+
+        class Field {
+
+            element
+            marbles
+
+            constructor(element) {
+                this.element = element;
+                this.marbles = new Array();
+            }
+
+            addMarble(marble) {
+                for (var i = 0; i < marbles.length; i++) {
+                    if (marble.x == marbles[i].x && marble.y == marbles[i].y) {
+                        return false;
+                    }
+                }
+                this.marbles.push(marble)
+                return true;
+            }
+
+            turnRight() { }
+
+            turnLeft() { }
+        }
+
+
+
+
+
+
+
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        body>div {
+            padding: .5vw;
+            height: 40vw;
+            width: 40vw;
+        }
+
+        body>div>div {
+            display: flex;
+            height: 50%;
+        }
+
+        body>div>div>div {
+            box-shadow: 7px 7px #0000006e;
+            background: #808080;
+            border-radius: 10px;
+            display: inline-flex;
+            margin: .5vw;
+            flex: 1;
+        }
+
+        body>div>div>div:hover {
+            background: #636363;
+        }
+
+        body>div>div>div>div {
+            background: red;
+            width: 30%;
+            height: 30%;
+            border-radius: 50%;
+        }
+
+        body>div>div>div>div:hover {
+            background: yellow;
+
+        }
+    </style>
+    <title>Ivo's spel</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div></div>
+        </div>
+
+        <div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>
