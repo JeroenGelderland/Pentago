@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+body>div {
+    padding: .5vw;
+    height: 40vw;
+    width: 40vw;
+}
+
+body>div>div {
+    display: flex;
+    height: 50%;
+}
+
+body>div>div>div {
+    box-shadow: 7px 7px #0000006e;
+    background: #808080;
+    border-radius: 10px;
+    display: inline-flex;
+    margin: .5vw;
+    flex: 1;
+}
+
+body>div>div>div:hover {
+    background: #636363;
+}
+
+body>div>div>div>div {
+    background: red;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+}
+
+body>div>div>div>div:hover {
+    background: yellow;
+
+}
